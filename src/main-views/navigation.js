@@ -23,6 +23,9 @@ class Navigation extends Component {
                 <Link to="/about">About</Link>
               </li>
               <li>
+                <Link to="/reddit">Reddit Demo</Link>
+              </li>
+              <li>
                 <a href="http://localhost:3001/auth/google">
                   <img id="google-login" src={googleBtn} alt="Google "/>
                 </a>
