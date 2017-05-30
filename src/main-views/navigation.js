@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import googleBtn from '../static/google-login-btn/btn_google_dark_normal_ios.svg';
 
 class Navigation extends Component {
+
   render(){
     return(
       <nav className="navbar navbar-inverse navbar-fixed-top">
@@ -19,6 +21,11 @@ class Navigation extends Component {
             <ul className="nav navbar-nav">
               <li>
                 <Link to="/about">About</Link>
+              </li>
+              <li>
+                <a href="http://localhost:3001/auth/google">
+                  <img id="google-login" src={googleBtn} alt="Google "/>
+                </a>
               </li>
             </ul>
           </div>
