@@ -23,7 +23,10 @@ class Navigation extends Component {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                <Link to="/reddit">Reddit Demo</Link>
+                <Link to="/reddit">Reddit API Demo</Link>
+              </li>
+              <li>
+                <Link to="/weather">Open Weather Map API Demo</Link>
               </li>
               <li>
                 <a href="http://localhost:3001/auth/google">
