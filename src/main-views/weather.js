@@ -22,6 +22,9 @@ class Weather extends Component {
 
     return (
       <div className="row">
+        <div id="weather-topic" className="col-md-12">
+          Helsinki, 16 days
+        </div>
         <Weathers weatherData={this.props.weatherData} />
       </div>
     )

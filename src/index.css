@@ -6,3 +6,17 @@ body {
 #google-login {
   height: 18px;
 }
+
+#weather-topic {
+  font-size: 1.4em;
+}
+
+.weather {
+  display: inline-block;
+  width: 80px;
+  margin: 20px;
+}
+
+.weather div {
+  text-align: center;
+}

@@ -3,16 +3,16 @@ import dateformat from 'dateformat'
 
 export default class Weathers extends Component {
   render() {
-    
+
     return (
-      <div className="col-md-2">
+      <div className="weathers-container">
         {this.props.weatherData.list.map((weather, i) => {
             const temp = Math.round(parseFloat(weather.temp.day));
             const weatherDate = new Date(parseInt(weather.dt)*1000);
             const dateString = dateformat(weatherDate, 'ddd dd.mm');
 
             return (
-                <div key={i}>
+                <div className="weather" key={i}>
                   <div>
                     { dateString }
                   </div>
@@ -21,9 +21,6 @@ export default class Weathers extends Component {
                   </div>
                   <div>
                     {temp}°C
-                  </div>
-                  <div>
-                    {weather.weather[0].description}
                   </div>
 
                 </div>
