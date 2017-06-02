@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux'
 import {
   SELECT_SUBREDDIT, INVALIDATE_SUBREDDIT,
   REQUEST_POSTS, RECEIVE_POSTS

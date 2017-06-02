@@ -1,23 +1,21 @@
 import {
-  REQUEST_WEATHER, RECEIVE_WEATHER
-} from '../actions/weather-actions'
+  REQUEST_SIGN_UP, RECEIVE_SIGN_UP
+} from '../actions/sign-up-actions'
 
 const initialState = {
   isFetching: false,
-  didInvalidate: false,
-  items: []
+  token: []
 }
 
-const weatherReducer = function(state = initialState, action) {
+const signUpReducer = function(state = initialState, action) {
   switch (action.type) {
-    case REQUEST_WEATHER:
+    case REQUEST_SIGN_UP:
       return Object.assign({}, state, {
         isFetching: true,
       })
-    case RECEIVE_WEATHER:
+    case RECEIVE_SIGN_UP:
       return Object.assign({}, state, {
         isFetching: false,
-        items: action.weathers,
         lastUpdated: action.receivedAt
       })
     default:
@@ -25,4 +23,4 @@ const weatherReducer = function(state = initialState, action) {
   }
 }
 
-export default weatherReducer
+export default signUpReducer

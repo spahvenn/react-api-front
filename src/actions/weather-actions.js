@@ -3,8 +3,6 @@ import secret from '../secret/secret'
 
 export const REQUEST_WEATHER = 'REQUEST_WEATHER'
 export const RECEIVE_WEATHER = 'RECEIVE_WEATHER'
-export const INVALIDATE_WEATHER = 'INVALIDATE_WEATHER'
-
 
 export function requestWeather() {
   return {

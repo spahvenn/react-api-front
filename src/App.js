@@ -4,7 +4,7 @@ import Main from './main-views/main';
 import About from './main-views/about';
 import RedditDemo from './main-views/reddit-demo'
 import Weather from './main-views/weather'
-
+import SignUp from './main-views/sign-up'
 
 import {
   BrowserRouter as Router,
@@ -24,9 +24,10 @@ class App extends Component {
         <Router basename="/react-api-front">
           <Main>
             <Route exact path='/' component={Home}/>
-            <Route path='/about' component={About}/>
             <Route path='/reddit' component={RedditDemo}/>
             <Route path='/weather' component={Weather}/>
+            <Route path='/about' component={About}/>
+            <Route path='/signup' component={SignUp}/>
           </Main>
         </Router>
       </Provider>

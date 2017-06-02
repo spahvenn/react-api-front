@@ -8,7 +8,7 @@ export default class Weathers extends Component {
       <div className="weathers-container">
         {this.props.weatherData.list.map((weather, i) => {
             const temp = Math.round(parseFloat(weather.temp.day));
-            const weatherDate = new Date(parseInt(weather.dt)*1000);
+            const weatherDate = new Date(parseInt(weather.dt, 10)*1000);
             const dateString = dateformat(weatherDate, 'ddd dd.mm');
 
             return (
@@ -17,7 +17,7 @@ export default class Weathers extends Component {
                     { dateString }
                   </div>
                   <div>
-                    <img src={"http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png" } />
+                    <img alt="weather" src={"http://openweathermap.org/img/w/" + weather.weather[0].icon + ".png" } />
                   </div>
                   <div>
                     {temp}°C

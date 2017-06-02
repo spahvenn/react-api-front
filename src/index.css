@@ -20,3 +20,7 @@ body {
 .weather div {
   text-align: center;
 }
+
+#register-form input {
+  max-width: 400px;
+}
