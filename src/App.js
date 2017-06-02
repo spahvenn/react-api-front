@@ -5,6 +5,7 @@ import About from './main-views/about';
 import RedditDemo from './main-views/reddit-demo'
 import Weather from './main-views/weather'
 import SignUp from './main-views/sign-up'
+import Login from './main-views/login'
 
 import {
   BrowserRouter as Router,
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path='/weather' component={Weather}/>
             <Route path='/about' component={About}/>
             <Route path='/signup' component={SignUp}/>
+            <Route path='/login' component={Login}/>
           </Main>
         </Router>
       </Provider>

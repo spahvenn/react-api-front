@@ -21,6 +21,6 @@ body {
   text-align: center;
 }
 
-#register-form input {
+#register-form, #login-form input {
   max-width: 400px;
 }

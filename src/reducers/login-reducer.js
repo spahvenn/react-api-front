@@ -1,18 +1,18 @@
 import {
-  REQUEST_SIGN_UP, RECEIVE_SIGN_UP
-} from '../actions/sign-up-actions'
+  REQUEST_LOGIN, RECEIVE_LOGIN
+} from '../actions/login-actions'
 
 const initialState = {
   isFetching: false,
 }
 
-const signUpReducer = function(state = initialState, action) {
+const loginReducer = function(state = initialState, action) {
   switch (action.type) {
-    case REQUEST_SIGN_UP:
+    case REQUEST_LOGIN:
       return Object.assign({}, state, {
         isFetching: true,
       })
-    case RECEIVE_SIGN_UP:
+    case RECEIVE_LOGIN:
       return Object.assign({}, state, {
         isFetching: false,
         lastUpdated: action.receivedAt
@@ -22,4 +22,4 @@ const signUpReducer = function(state = initialState, action) {
   }
 }
 
-export default signUpReducer
+export default loginReducer

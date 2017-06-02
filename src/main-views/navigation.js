@@ -33,6 +33,12 @@ class Navigation extends Component {
                   <img id="google-login" src={googleBtn} alt="Google "/>
                 </a>
               </li>
+              <li>
+                <Link to="/login">login</Link>
+              </li>
+              <li>
+                <Link to="/signup">sign up</Link>
+              </li>
             </ul>
           </div>
         </div>
