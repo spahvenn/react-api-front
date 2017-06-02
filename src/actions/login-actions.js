@@ -11,9 +11,11 @@ export function requestLogin(email, password) {
   }
 }
 
-export function receiveLogin(json) {
+export function receiveLogin(user, token) {
   return {
-    type: RECEIVE_LOGIN
+    type: RECEIVE_LOGIN,
+    user: user,
+    token: token
   }
 }
 
@@ -24,9 +26,11 @@ export function login(email, password) {
       email: email,
       password: password
     })
-      .then(dispatch(receiveLogin()))
-      .catch(function (error) {
-        console.log(error);
-      });
+    .then((res) => {
+      dispatch(receiveLogin(res.data.user, res.data.token))
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   }
 }

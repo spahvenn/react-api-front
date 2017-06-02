@@ -15,6 +15,8 @@ const loginReducer = function(state = initialState, action) {
     case RECEIVE_LOGIN:
       return Object.assign({}, state, {
         isFetching: false,
+        token: action.token,
+        user: action.user,
         lastUpdated: action.receivedAt
       })
     default:
