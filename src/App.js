@@ -13,9 +13,29 @@ import {
 } from 'react-router-dom'
 
 import { Provider } from 'react-redux'
-import configureStore from './configureStore'
 
-const store = configureStore()
+import { compose, createStore, applyMiddleware } from 'redux'
+import thunkMiddleware from 'redux-thunk'
+import rootReducer from './reducers/reducers'
+import logger from 'redux-logger'
+import api from './middleware/api'
+
+import {persistStore, autoRehydrate} from 'redux-persist'
+
+
+const store = createStore(
+  rootReducer,
+  undefined,
+  compose(
+    applyMiddleware(
+      thunkMiddleware.withExtraArgument(api),
+      thunkMiddleware.withExtraArgument(logger)
+    ),
+    autoRehydrate()
+  )
+)
+
+persistStore(store)
 
 class App extends Component {
 

@@ -1,9 +1,10 @@
 import {
-  REQUEST_LOGIN, RECEIVE_LOGIN
+  REQUEST_LOGIN, SUCCESS_LOGIN
 } from '../actions/login-actions'
 
 const initialState = {
   isFetching: false,
+  isAuthenticated: localStorage.getItem('id_token') ? true : false
 }
 
 const loginReducer = function(state = initialState, action) {
@@ -11,10 +12,12 @@ const loginReducer = function(state = initialState, action) {
     case REQUEST_LOGIN:
       return Object.assign({}, state, {
         isFetching: true,
+        isAuthenticated: false
       })
-    case RECEIVE_LOGIN:
+    case SUCCESS_LOGIN:
       return Object.assign({}, state, {
         isFetching: false,
+        isAuthenticated: true,
         token: action.token,
         user: action.user,
         lastUpdated: action.receivedAt

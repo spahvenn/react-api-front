@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { login } from '../actions/login-actions'
+import { Redirect } from 'react-router-dom'
+
 
 class Login extends Component {
 
@@ -27,6 +29,13 @@ class Login extends Component {
   }
 
   render(){
+
+    if (this.props.isLoggedIn) {
+      return (
+        <Redirect to="/"/>
+      )
+    }
+
     return (
       <div className="row">
         <div className="col-md-12">
@@ -49,7 +58,8 @@ class Login extends Component {
 
 function mapStateToProps(state) {
   return {
-    isFetching: state.login.isFetching
+    isFetching: state.login.isFetching,
+    isLoggedIn: state.login.isAuthenticated
   }
 }
 
