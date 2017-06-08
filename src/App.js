@@ -6,6 +6,7 @@ import RedditDemo from './main-views/reddit-demo'
 import Weather from './main-views/weather'
 import SignUp from './main-views/sign-up'
 import Login from './main-views/login'
+import Logout from './components/logout'
 
 import {
   BrowserRouter as Router,
@@ -50,6 +51,7 @@ class App extends Component {
             <Route path='/about' component={About}/>
             <Route path='/signup' component={SignUp}/>
             <Route path='/login' component={Login}/>
+            <Route path='/logout' component={Logout}/>
           </Main>
         </Router>
       </Provider>

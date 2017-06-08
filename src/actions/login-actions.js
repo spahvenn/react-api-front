@@ -54,22 +54,20 @@ export function login(email, password) {
 
 // Logout process
 
-export const REQUEST_LOGOUT = 'REQUEST_LOGIN'
-export const SUCCESS_LOGOUT = 'SUCCESS_LOGIN'
-export const FAILURE_LOGOUT = 'FAILURE_LOGIN'
+export const SUCCESS_LOGOUT = 'SUCCESS_LOGOUT'
 
-function requestLogout() {
-  return {
-    type: REQUEST_LOGOUT,
-    isFetching: true,
-    isAuthenticated: true
-  }
-}
-
-function receiveLogout() {
+export function receiveLogout() {
   return {
     type: SUCCESS_LOGOUT,
     isFetching: false,
     isAuthenticated: false
+  }
+}
+
+
+export function logout() {
+  return dispatch => {
+    localStorage.removeItem('token')
+    return dispatch(receiveLogout())
   }
 }

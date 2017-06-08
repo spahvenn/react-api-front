@@ -1,5 +1,5 @@
 import {
-  REQUEST_LOGIN, SUCCESS_LOGIN
+  REQUEST_LOGIN, SUCCESS_LOGIN, SUCCESS_LOGOUT
 } from '../actions/login-actions'
 
 const initialState = {
@@ -21,6 +21,13 @@ const loginReducer = function(state = initialState, action) {
         token: action.token,
         user: action.user,
         lastUpdated: action.receivedAt
+      })
+    case SUCCESS_LOGOUT:
+      return Object.assign({}, state, {
+        isFetching: false,
+        isAuthenticated: false,
+        token: null,
+        user: null
       })
     default:
       return state

@@ -1,10 +1,19 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import googleBtn from '../static/google-login-btn/btn_google_dark_normal_ios.svg';
+import { connect } from 'react-redux'
 
 class Navigation extends Component {
 
   render(){
+
+    let loginButton = null;
+    if (this.props.isLoggedIn) {
+      loginButton = <Link to="/logout">logout</Link>
+    } else {
+      loginButton = <Link to="/login">login</Link>
+    }
+
     return(
       <nav className="navbar navbar-inverse navbar-fixed-top">
         <div className="container">
@@ -34,7 +43,7 @@ class Navigation extends Component {
                 </a>
               </li>
               <li>
-                <Link to="/login">login</Link>
+                {loginButton}
               </li>
               <li>
                 <Link to="/signup">sign up</Link>
@@ -47,4 +56,10 @@ class Navigation extends Component {
   }
 }
 
-export default Navigation;
+function mapStateToProps(state) {
+  return {
+    isLoggedIn: state.login.isAuthenticated
+  }
+}
+
+export default connect(mapStateToProps)(Navigation)
