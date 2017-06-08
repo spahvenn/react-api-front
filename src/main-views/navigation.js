@@ -14,6 +14,24 @@ class Navigation extends Component {
       loginButton = <Link to="/login">login</Link>
     }
 
+    let signUpButton = null;
+    if (this.props.isLoggedIn) {
+      signUpButton = null
+    } else {
+      signUpButton = <Link to="/signup">sign up</Link>
+    }
+
+    let googleLoginButton = null
+    if (this.props.isLoggedIn) {
+      googleLoginButton = null
+    } else {
+      googleLoginButton = (
+        <a href="http://localhost:3001/auth/google">
+          <img id="google-login" src={googleBtn} alt="Google "/>
+        </a>
+      )
+    }
+
     return(
       <nav className="navbar navbar-inverse navbar-fixed-top">
         <div className="container">
@@ -38,15 +56,13 @@ class Navigation extends Component {
                 <Link to="/weather">Open Weather Map API Demo</Link>
               </li>
               <li>
-                <a href="http://localhost:3001/auth/google">
-                  <img id="google-login" src={googleBtn} alt="Google "/>
-                </a>
+                {googleLoginButton}
               </li>
               <li>
                 {loginButton}
               </li>
               <li>
-                <Link to="/signup">sign up</Link>
+                {signUpButton}
               </li>
             </ul>
           </div>
